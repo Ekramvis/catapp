@@ -19,4 +19,10 @@ class CatsController < ApplicationController
     redirect_to cat_path(@cat)
   end
 
+  def destroy
+    @cat = Cat.find(params[:id]).destroy
+
+    redirect_to cats_path
+  end
+
 end
